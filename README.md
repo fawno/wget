@@ -1,3 +1,7 @@
+[![GitHub license](https://img.shields.io/github/license/fawno/wget.svg)](https://github.com/fawno/wget/blob/master/LICENSE)
+[![GitHub release](https://img.shields.io/github/release/fawno/wget.svg)](https://github.com/fawno/wget/releases)
+[![Packagist](https://img.shields.io/packagist/v/fawno/wget.svg)](https://packagist.org/packages/fawno/wget)
+
 # wget
 PHP Class wget
 
