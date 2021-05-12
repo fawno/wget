@@ -1,6 +1,10 @@
-[![GitHub license](https://img.shields.io/github/license/fawno/wget.svg)](https://github.com/fawno/wget/blob/master/LICENSE)
-[![GitHub release](https://img.shields.io/github/release/fawno/wget.svg)](https://github.com/fawno/wget/releases)
-[![Packagist](https://img.shields.io/packagist/v/fawno/wget.svg)](https://packagist.org/packages/fawno/wget)
+[![GitHub license](https://img.shields.io/github/license/fawno/wget)](LICENSE)
+[![GitHub release](https://img.shields.io/github/release/fawno/wget)](https://github.com/fawno/wget/releases)
+[![Packagist](https://img.shields.io/packagist/v/fawno/wget)](https://packagist.org/packages/fawno/wget)
+[![Packagist Downloads](https://img.shields.io/packagist/dt/fawno/wget)](https://packagist.org/packages/fawno/wget/stats)
+[![GitHub issues](https://img.shields.io/github/issues/fawno/wget)](https://github.com/fawno/wget/issues)
+[![GitHub forks](https://img.shields.io/github/forks/fawno/wget)](https://github.com/fawno/wget/network)
+[![GitHub stars](https://img.shields.io/github/stars/fawno/wget)](https://github.com/fawno/wget/stargazers)
 
 # wget
 PHP Class wget
