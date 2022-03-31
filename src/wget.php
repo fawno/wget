@@ -53,9 +53,9 @@
     protected $headers = array();
     protected $response_headers = null;
 
-    public function __construct ($useragent = null, $cookie_jar = '', $headers = null) {
+    public function __construct (?string $useragent = null, ?string $cookie_jar = null, $headers = null) {
       $this->curl = curl_init();
-      $this->cookie_jar = $cookie_jar;
+      $this->cookie_jar = $cookie_jar ?? tempnam(sys_get_temp_dir(), 'wgt');
       if (isset($useragent)) curl_setopt($this->curl, CURLOPT_USERAGENT, $useragent);
       if (isset($headers) and is_array($headers)) array_walk($headers, function(&$item, $key) { if (!is_numeric($key)) $item = $key . ": " . $item; });
       if (isset($headers)) $this->headers = $headers;
@@ -70,6 +70,10 @@
 
     public function __destruct () {
       curl_close($this->curl);
+
+      if (is_file($this->cookie_jar)) {
+        unlink($this->cookie_jar);
+      }
     }
 
     protected function read_header ($curl, $header) {
