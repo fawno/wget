@@ -96,7 +96,7 @@
 
     protected function progress () {
       static $url = null;
-      static $progress_bar = null;
+      static $progress_bar = '';
 
       $curl_info = curl_getinfo($this->curl);
       if ($url == $curl_info['url']) echo str_repeat("\x08", strlen($progress_bar));
@@ -139,6 +139,10 @@
 
     public function set_verbose ($verbose = true) {
       curl_setopt($this->curl, CURLOPT_VERBOSE, (bool) $verbose);
+    }
+
+    public function set_customrequest (string $customrequest) {
+      curl_setopt($this->curl, CURLOPT_CUSTOMREQUEST, $customrequest);
     }
 
     public function set_followlocation ($follow = true) {
