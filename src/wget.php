@@ -81,6 +81,7 @@
       if (isset($values[1])) {
         switch ($values[0]) {
           case 'Content-disposition':
+          case 'content-disposition':
           //case 'Content-Type':
             $values[1] = explode(';', $values[1]);
             foreach ($values[1] as $item => $value) {
