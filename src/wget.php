@@ -227,9 +227,8 @@
       $this->response_headers = null;
       if (empty($filename)) {
         $info = $this->info_url($url, $referer);
-        if (isset($info['headers']['Content-disposition']['filename'])) {
-          $filename = $info['headers']['Content-disposition']['filename'];
-        }
+        $filename = $info['headers']['Content-disposition']['filename'] ?? $filename;
+        $filename = $info['headers']['content-disposition']['filename'] ?? $filename;
       }
       if (empty($filename)) $filename = parse_url($url, PHP_URL_HOST) . parse_url($url, PHP_URL_PATH);
       if (!is_dir(dirname($filename))) {
