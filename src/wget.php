@@ -107,13 +107,13 @@
       if ($url == $curl_info['url']) echo str_repeat("\x08", strlen($progress_bar));
 
       $url = $curl_info['url'];
-      $progress_bar = null;
+      $progress_bar = '';
       if ($curl_info['http_code'] == 200) {
         $down_perc = 0;
         if ($curl_info['size_download'] <= $curl_info['download_content_length']) $down_perc = (100 * $curl_info['size_download']) / $curl_info['download_content_length'];
         $eta = 'N/A';
         if ($curl_info['speed_download']) $eta = ($curl_info['download_content_length'] - $curl_info['size_download']) / $curl_info['speed_download'];
-        $progress_bar = sprintf('[%-30s] %3d%% %02.3fs %02.3fs', str_repeat('#', 30 * $down_perc / 100), $down_perc, $eta, $curl_info['total_time']);
+        $progress_bar = sprintf('[%-30s] %3d%% %02.3fs %02.3fs', str_repeat('#', (int) (30 * $down_perc / 100)), $down_perc, $eta, $curl_info['total_time']);
       }
       echo $progress_bar, "\x20\x08";
     }
